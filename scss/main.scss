@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans:300,400,700,800&subset=latin-ext');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E4E4E4;
+    color: #444444;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin cta_button($color) {
+    background-color: $color;
+    font-family: 'Open Sans', sans-serif;
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 90px;
+}
+
+.active {
+    color: white;
+    background-color: #444444;
+    border-radius: 7px;
+
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+    header {
+        display: flex;
+        //justify-content: center;
+        flex-direction: column;
+        .logo_menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media only screen and (min-width: 760px) {
+                justify-content: space-between;
+                align-items: center;
+            }
+            .logo {
+                font-family: 'Oleo Script', sans-serif;
+                height: 67px;
+                width: 145px;
+                color: white;
+                background-color: #FC4887;
+                border-radius: 8px;
+                letter-spacing: 3px;
+                line-height: 67px;
+                font-size: 25px;
+                text-align: center;
+            }
+
+            nav {
+                //display: none;
+                @media only screen and (min-width: 768px) {
+                    display: block;
+                    ul {
+                        display: flex;
+                        li {
+                            list-style: none;
+                            margin-right: 10px;
+                            //padding: ;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .banner {
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 55px;
+        @media only screen and (min-width: 760px) {
+        flex-direction: row;
+    }
+        .banner_text {
+            margin-bottom: 15px;
+            h2 {
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 30px;
+            }
+        }
+        .banner_buttons {
+            width: 100%;
+            .button:first-child {
+                @include cta_button(#1691C3);
+                color: white;
+            }
+            .button:last-child {
+                @include cta_button(#E4E4E4);
+                color: #444444;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav {
+        display: inline-block;
+    }
+}
+
+//font-family: 'Open Sans', sans-serif;
