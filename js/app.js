@@ -3,18 +3,18 @@ var menu = $(".menu");
 var menuTrigger = $("#menu-trigger");
 
 
-if (mobile.matches) {
-    $(menuTrigger).css('display' , 'block');
-} else {
-    $(menuTrigger).css('display' , 'none');
-}
-mobile.addListener(function (mobile) {
-    if (mobile.matches) {
-        menuTrigger.css('display' , 'block');
-    } else {
-        menuTrigger.css('display' , 'none');
-    }
-});
+// if (mobile.matches) {
+//     $(menuTrigger).css('display' , 'block');
+// } else {
+//     $(menuTrigger).css('display' , 'none');
+// }
+// mobile.addListener(function (mobile) {
+//     if (mobile.matches) {
+//         menuTrigger.css('display' , 'block');
+//     } else {
+//         menuTrigger.css('display' , 'none');
+//     }
+// });
 
 // menuTrigger.addEventListener("click", function () {
 //     if(menu.style.display === "block"){
