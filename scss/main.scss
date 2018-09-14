@@ -24,7 +24,7 @@ $colors: (
 
 $break-points: (
         mobile: "(max-width: 767px)",
-        tablet: "(min-width: 768px)",
+        tablet: "(min-width: 778px)",
         desktop: "(min-width: 1200px)",
 );
 
@@ -40,7 +40,7 @@ $break-points: (
     line-height: 90px;
 }
 
-.active {
+.nav-active {
     color: white;
     background-color: map-get($colors, active-nav-btn-bg);
     border-radius: 7px;
@@ -55,11 +55,47 @@ $break-points: (
         display: flex;
         flex-direction: column;
         margin: 0 25px;
+        position: relative;
+
+        .wrapper{
+            margin-top: 45px;
+        }
+
+        .icon {
+            font-size: 12px;
+            width: 70px;
+            height: 45px;
+            border-radius: 7px;
+            background-color: #3D3D3D;
+            opacity: 0.2;
+            color: white;
+
+            position:absolute;
+            top: 5px;
+            left: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &:active{
+                opacity: 0.4;
+            }
+        }
 
         .menu-container {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            .logo-container{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
 
             .logo {
                 font-family: 'Oleo Script', sans-serif;
@@ -72,11 +108,19 @@ $break-points: (
                 line-height: 67px;
                 font-size: 25px;
                 text-align: center;
+                margin-bottom: 10px;
+            }
+
+            p{
+                font-size: 15px;
+                text-align: center;
+                font-weight: 800;
+                color: #444444;
             }
 
             nav {
                 ul {
-                    display: inline-block;
+                    display: none;
                     li {
                         list-style: none;
                     }
@@ -96,9 +140,9 @@ $break-points: (
         text-align: center;
         padding: 50px 20px;
 
-        @media only screen and (min-width: 760px){
-            flex-direction: row;
-        }
+        //@media only screen and (min-width: 760px){
+        //    flex-direction: row;
+        //}
 
         .banner_text {
             margin-bottom: 15px;
@@ -145,33 +189,40 @@ $break-points: (
     }
 }
 
-//@media only screen and (min-width: 760px) {
-//
-//    .menu-container {
-//        justify-content: space-between;
-//        align-items: center;
-//
-//        ul {
-//            display: flex;
-//            list-style: none;
-//
-//            li {
-//                margin-right: 10px;
-//                font-weight: 600;
-//                padding: 3px 5px;
-//
-//                &:hover {
-//                    filter: brightness(110%);
-//                    transform: scale(1.05);
-//                    cursor: pointer;
-//                }
-//            }
-//        }
-//    }
-//
-//    .banner {
-//        flex-direction: row;
-//    }
-//}
+@media only screen and #{(map-get($break-points, tablet))} {
+
+    .main-container header {
+
+        .icon {
+            display: none;
+        }
+
+        .menu-container {
+
+            justify-content: space-between;
+            align-items: center;
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                li {
+                    margin-right: 10px;
+                    font-weight: 600;
+                    padding: 3px 5px;
+
+                    &:hover {
+                        filter: brightness(110%);
+                        transform: scale(1.05);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-container .banner {
+        flex-direction: row;
+    }
+}
 
 //font-family: 'Open Sans', sans-serif;
