@@ -14,11 +14,18 @@ body {
 
 $colors: (
         verti-logo : #FC4887,
+    //mobile
+    //active-nav-btn-bg-mobile
+    //desktop, tablet
         active-nav-btn-bg: #444444,
-
         btn-ok-bg: #1691C3,
-        btn-more-info-bg: #1691C3,
+        btn-more-info-bg: #E4E4E4,
+);
 
+$break-points: (
+        mobile: "(max-width: 767px)",
+        tablet: "(min-width: 768px)",
+        desktop: "(min-width: 1200px)",
 );
 
 @mixin cta_button($color) {
@@ -39,15 +46,18 @@ $colors: (
     border-radius: 7px;
 }
 
-.container {
+.main-container {
     max-width: 1024px;
     margin: 0 auto;
     width: 100%;
+
     header {
         display: flex;
         //justify-content: center;
         flex-direction: column;
-        .logo_menu {
+        margin: 0 25px;
+
+        .menu-container {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -56,6 +66,7 @@ $colors: (
                 justify-content: space-between;
                 align-items: center;
             }
+
             .logo {
                 font-family: 'Oleo Script', sans-serif;
                 height: 67px;
@@ -70,15 +81,28 @@ $colors: (
             }
 
             nav {
-                //display: none;
+                ul {
+                    display: inline-block;
+                    li {
+                        list-style: none;
+
+                    }
+                }
                 @media only screen and (min-width: 760px) {
                     display: block;
+                    padding: 3px 5px;
+
                     ul {
                         display: flex;
                         li {
                             list-style: none;
                             margin-right: 10px;
                             font-weight: 600;
+                            &:hover {
+                                filter: brightness(110%);
+                                transform: scale(1.2);
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
@@ -87,13 +111,16 @@ $colors: (
     }
 
     .banner {
+        margin: 0 25px;
+
         background-color: white;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 55px;
+        padding: 50px 20px;
+
         @media only screen and (min-width: 760px) {
             flex-direction: row;
         }
@@ -109,37 +136,40 @@ $colors: (
         }
         .banner_buttons {
             width: 100%;
+
             .button:first-child {
-                @include cta_button(#1691C3);
+                @include cta_button(map-get($colors, btn-ok-bg));
                 color: white;
 
                 &:hover {
+                    filter: brightness(105%);
+                    cursor: pointer;
+                }
+                &:active {
                     filter: brightness(110%);
                     cursor: pointer;
                 }
             }
 
             .button:last-child {
-                @include cta_button(#E4E4E4);
+                @include cta_button(map-get($colors, btn-more-info-bg));
                 color: #444444;
-            }
-            &:hover {
-                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(95%);
+                    cursor: pointer;
+                }
+                &:active {
+                    filter: brightness(90%);
+                    cursor: pointer;
+                }
             }
         }
     }
 }
 
 @media only screen and (max-width: 768px) {
-    nav {
-        display: inline-block;
-        ul {
-            li {
-                list-style: none;
 
-            }
-        }
-    }
 }
 
 //font-family: 'Open Sans', sans-serif;

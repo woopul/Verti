@@ -8,18 +8,18 @@ if (mobile.matches) {
 } else {
     $(menuTrigger).css('display' , 'none');
 }
-// mobile.addListener(function () {
-//     if (mobile.matches) {
-//         menuTrigger.css('display' , 'block');
-//     } else {
-//         menuTrigger.css('display' , 'none');
-//     }
-// });
-
-menuTrigger.addEventListener("click", function () {
-    if(menu.style.display === "block"){
-        menu.style.display = "none";
+mobile.addListener(function (mobile) {
+    if (mobile.matches) {
+        menuTrigger.css('display' , 'block');
     } else {
-        menu.style.display = "block";
+        menuTrigger.css('display' , 'none');
     }
 });
+
+// menuTrigger.addEventListener("click", function () {
+//     if(menu.style.display === "block"){
+//         menu.style.display = "none";
+//     } else {
+//         menu.style.display = "block";
+//     }
+// });
