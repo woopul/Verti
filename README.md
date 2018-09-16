@@ -1,1 +1,1 @@
-Verti Sipmple RWD site
+Verti Sipmple RWD site based on template
