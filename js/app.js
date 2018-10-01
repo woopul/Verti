@@ -1,7 +1,11 @@
 var mobile = window.matchMedia("screen and (max-width: 760px)");
-var menu = $(".menu");
+var menuLi = $(".menu li");
 var menuTrigger = $("#menu-trigger");
 
+    menuLi.on('click', function () {
+        $(".nav-active").removeClass(".nav-active");
+        $(this).addClass(".nav-active");
+    })
 
 // if (mobile.matches) {
 //     $(menuTrigger).css('display' , 'block');
